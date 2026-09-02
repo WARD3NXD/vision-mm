@@ -3,11 +3,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import SplitText from "gsap/src/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function AboutBlock() {
     const container = useRef<HTMLDivElement>(null);
+    const imageContainer = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
           SplitText.create(".h2-text", {
@@ -31,6 +33,44 @@ export default function AboutBlock() {
               });
             },
           });
+
+          // Image scroll animation
+          if (imageContainer.current) {
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: imageContainer.current,
+                start: "top 70%",
+                toggleActions: "play none none none",
+              },
+            });
+
+            tl.fromTo(
+              imageContainer.current,
+              {
+                y: 150,
+                x: 40,
+                scale: 1.15,
+                rotation: 20,
+                opacity: 0,
+              },
+              {
+                y: -8,
+                x: -2,
+                scale: 1,
+                rotation: -7,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power4.out",
+              }
+            ).to(imageContainer.current, {
+              y: -8,
+              x: -2,
+              scale: 1,
+              rotation: -7,
+              duration: 0,
+              ease: "power2.out",
+            });
+          }
         },
         { scope: container }
       );
@@ -41,7 +81,7 @@ export default function AboutBlock() {
           className="
             relative mx-auto
             mt-12 mb-12
-            min-svh
+            md:mt-24 md:mb-24
             overflow-hidden
             bg-[#0a0a0a]
             p-4
@@ -50,21 +90,19 @@ export default function AboutBlock() {
         >
           <div
             className="
-              mx-auto flex max-w-[1800px]
+              mx-auto flex max-w-[2560px]
               flex-col md:gap-12
               gap-6
-              md:relative md:block md:min-h-[80svh]
+              md:relative md:flex md:flex-col
             "
           >
-
-            {/* Intro */}
+            
             <h2
               className="
                 w-full
                 text-xl/7 font-semi text-white
-                md:absolute md:left-0 md:top-0
                 md:w-[60%]
-                md:text-5xl/16
+                md:text-5xl/14
                 h2-text
               "
             >
@@ -73,46 +111,35 @@ export default function AboutBlock() {
               ecommerce stores, and SaaS pages.
             </h2>
 
-
-            {/* Image */}
             <div
+              ref={imageContainer}
               className="
                 order-2
                 mx-auto
-                aspect-[1.65/1]
                 w-full
                 overflow-hidden
-                bg-neutral-200
-
-                md:absolute
-                md:left-[15%]
-                md:top-[25%]
                 md:mx-0
-                md:w-[55%]
-                md:-rotate-[7deg]
+                md:w-full
+                md:content-center
+                md:justify-items-center
+                md:rotate-[-7deg]
               "
             >
               <img
-                src="/images/about.jpg"
-                alt=""
-                className="h-full w-full object-cover"
+                src="/image/polorized-about-image.png"
+                alt="Not me lol"
+                className="md:max-w-[50%] h-full object-contain"
               />
             </div>
 
-
-            {/* Statement */}
             <h2
               className="
                 order-3
                 ml-auto
                 w-full
                 text-xl/7 font-semi text-white
-
-                md:absolute
-                md:bottom-0
-                md:right-0
                 md:w-[45%]
-                md:text-5xl/16
+                md:text-5xl/14
                 h2-text
               "
             >
