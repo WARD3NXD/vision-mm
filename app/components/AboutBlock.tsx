@@ -101,6 +101,8 @@ export default function AboutBlock() {
         bg-[#0a0a0a]
         p-4
         md:mt-24 md:mb-24 md:p-12
+
+        md:py-24
       "
     >
       <div

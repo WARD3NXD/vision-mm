@@ -142,7 +142,8 @@ export default function Footer() {
   };
 
   return (
-    <section className="relative h-svh p-12">
+    <section className="relative h-[85svh] md:h-svh p-4 md:p-12">
+
       {/* Background */}
       <div className="absolute bottom-0 left-0 w-full h-[inherit] -z-10">
         <div className="absolute bottom-0 left-0 w-full h-[inherit] bg-linear-to-b from-[#0a0a0a] via-[#0a0a0a]/10 to-[#0a0a0a]/0" />
@@ -152,14 +153,14 @@ export default function Footer() {
           autoPlay
           muted
           loop
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-right"
         />
       </div>
 
       {/* Form */}
-      <div>
+      <div className="py-9">
 
-          <div className="bg-white/10 p-6 rounded-md backdrop-blur-2xl max-w-2/6 flex flex-col gap-9">
+          <div className="bg-white/10 p-3.5 md:p-8 rounded-md backdrop-blur-2xl md:max-w-2/7 flex flex-col gap-9">
 
             <h2 data-about-heading className="w-full text-xl/7 font-semi text-white md:w-[60%] md:text-5xl/14">
                 Send Message
@@ -172,7 +173,7 @@ export default function Footer() {
                   <div className="flex flex-col gap-1.5 w-full">
                     <label
                       htmlFor="fname"
-                      className="font-mono uppercase text-sm"
+                      className="font-mono uppercase  text-[12px]"
                     >
                       First Name
                     </label>
@@ -188,7 +189,7 @@ export default function Footer() {
                   <div className="flex flex-col gap-1.5 w-full">
                     <label
                       htmlFor="lname"
-                      className="font-mono uppercase text-sm"
+                      className="font-mono uppercase text-[12px]"
                     >
                       Last Name
                     </label>
@@ -206,7 +207,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="email"
-                    className="font-mono uppercase text-sm"
+                    className="font-mono uppercase text-[12px]"
                   >
                     Email Address
                   </label>
@@ -223,7 +224,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="message"
-                    className="font-mono uppercase text-sm"
+                    className="font-mono uppercase text-[12px]"
                   >
                     Write Message
                   </label>
@@ -248,7 +249,7 @@ export default function Footer() {
                       md:gap-12
                       justify-between
                       text-black
-                      px-6
+                      px-4
                       py-3
                       md:px-6
                       md:py-4
@@ -257,6 +258,8 @@ export default function Footer() {
                       cursor-pointer
                       disabled:cursor-not-allowed
                       disabled:opacity-60
+                      w-full
+                      md:w-fit
                     "
                   >
                     {status === "sending"
@@ -286,7 +289,7 @@ export default function Footer() {
       </div>
 
       <div className="@container overflow-hidden">
-          <h1 className="whitespace-nowrap text-[36cqw] text-white/20 font-bold leading-none tracking-[-0.06em] text-center">
+          <h1 className="whitespace-nowrap text-[32cqw] md:text-[29cqw] text-white/10 font-bold leading-none text-center">
             VISION
           </h1>
       </div>
