@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import { avant } from "./fonts";
-import "./globals.css";
+import { avant } from "../fonts";
+import "../globals.css";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",

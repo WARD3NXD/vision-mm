@@ -48,7 +48,7 @@ export default function Hero (){
     return(
         <section ref={container} className="mx-auto w-full md:p-8 p-4 h-svh content-end items-end">
           <div className="absolute top-0 left-0 w-full h-[inherit] -z-10">
-            <div className="absolute top-0 left-0 w-full h-[inherit] bg-linear-to-b from-[#0a0a0a]/0 via-[#0a0a0a]/10 to-[#0a0a0a]/100" ></div>
+            <div className="absolute top-0 left-0 w-full h-[inherit] bg-linear-to-b from-[#0a0a0a]/0 via-[#0a0a0a]/10 to-[#0a0a0a]" ></div>
             <video src="/video/hero-bg-video.mp4" autoPlay muted loop className="w-full h-full object-cover" />
           </div>
             <div className="flex flex-col md:flex-row md:justify-between md:items-end md:h-full pb-4 md:max-w-[2560px] mx-auto">
@@ -56,8 +56,8 @@ export default function Hero (){
                     <span className="hero-title">Hello World! <br/> Expand your vision </span> 
                 </h1>
                 
+                {/*contact us link will be added later on*/}
                 <Button href="/" text="Let's see" />
-                
             </div>
         </section>
     );

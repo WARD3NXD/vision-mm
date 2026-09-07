@@ -238,7 +238,6 @@ useGSAP(() => {
                         flex-col
                         gap-12
                         p-2
-                        pb-[40svh]
                     "
                 >
 

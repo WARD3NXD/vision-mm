@@ -1,0 +1,111 @@
+/* =========================================================
+   VISION CMS — Payload Admin Overrides
+   ========================================================= */
+
+:root {
+  --vision-bg: #0a0a0a;
+  --vision-surface: #141414;
+  --vision-border: #2a2a2a;
+  --vision-text: #ffffff;
+  --vision-muted: #a1a1a1;
+  --vision-accent: #ffffff;
+}
+
+/* ---------------------------------------------------------
+   Login page
+   --------------------------------------------------------- */
+
+.login {
+  background: var(--vision-bg);
+}
+
+.login__brand {
+  margin-bottom: 48px;
+}
+
+/* Payload logo area */
+.login__brand svg {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Form */
+.login__form {
+  width: min(100%, 440px);
+}
+
+/* Labels */
+.login__form label {
+  color: var(--vision-text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Inputs */
+.login__form input {
+  min-height: 48px;
+  background: var(--vision-surface);
+  border: 1px solid var(--vision-border);
+  border-radius: 8px;
+  color: var(--vision-text);
+  font-size: 14px;
+  padding: 0 14px;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.login__form input:focus {
+  border-color: #666;
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(255 255 255 / 8%);
+}
+
+/* Forgot password */
+.login__form a {
+  color: var(--vision-muted);
+  font-size: 13px;
+  transition: color 150ms ease;
+}
+
+.login__form a:hover {
+  color: var(--vision-text);
+}
+
+/* Login button */
+.login__form button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 24px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--vision-accent);
+  color: #0a0a0a;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.login__form button:hover {
+  opacity: 0.9;
+}
+
+.login__form button:active {
+  transform: scale(0.99);
+}
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .login__form {
+    width: 100%;
+  }
+
+  .login__brand {
+    margin-bottom: 32px;
+  }
+}
