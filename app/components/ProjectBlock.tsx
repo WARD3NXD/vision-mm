@@ -187,10 +187,10 @@ useGSAP(() => {
                     className="
                         p-6
                         md:px-16
-                        md:py-32
+                        md:py-48
                         w-full
                         md:max-w-[30%]
-                        md:h-dvh
+                        md:max-h-dvh
                         flex
                         flex-col
                         gap-6
