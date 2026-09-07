@@ -52,8 +52,8 @@ export default function Hero (){
             <video src="/video/hero-bg-video.mp4" autoPlay muted loop className="w-full h-full object-cover" />
           </div>
             <div className="flex flex-col md:flex-row md:justify-between md:items-end md:h-full pb-4 md:max-w-[2560px] mx-auto">
-                <h1 className="md:text-[120px] text-6xl uppercase hero-title font-bold md:text-6xl tracking-tight">
-                    <span className="hero-title">Hello World! <br/> Expand your vision </span> 
+                <h1 className="md:text-[120px] text-5xl uppercase hero-title font-bold md:text-6xl tracking-tight">
+                    <span className="hero-title">Design so good,  <br/> You'll forget it's just one person.</span> 
                 </h1>
                 
                 {/*contact us link will be added later on*/}
