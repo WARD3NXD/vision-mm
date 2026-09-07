@@ -150,6 +150,33 @@
   --sidebar-ring: #737373;
 }
 
+
+.input-box {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: #0e0e0e;
+  border: 2px solid rgb(255 255 255 / 0.1);
+  border-radius: 0.375rem;
+  outline: none;
+  color: white;
+}
+
+.input-box:focus {
+  border-color: rgb(255 255 255 / 0.25);
+}
+
+.input-box::placeholder {
+  color: rgb(255 255 255 / 0.3);
+}
+
+textarea.input-box {
+  min-height: 120px;
+  resize: vertical;
+  text-align: left;
+}
+
+
+
 /* Your existing custom spacing */
 .section-default {
   margin-top: 80px;
