@@ -32,6 +32,9 @@ importers:
       graphql:
         specifier: ^17.0.2
         version: 17.0.2
+      gsap:
+        specifier: ^3.15.0
+        version: 3.15.0
       lucide:
         specifier: ^1.38.0
         version: 1.40.0
