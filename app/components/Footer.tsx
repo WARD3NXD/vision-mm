@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import SplitText from "gsap/src/SplitText";
 import { AnalogClockWidget } from "@/components/clock-widget";
+import VisionReveal from "./VisionReveal";
 
 
 export default function Footer() {
@@ -182,6 +183,24 @@ export default function Footer() {
 
   return (
     <section className="relative p-4 md:p-12 mt-10">
+
+
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          {/* Video */}
+          <video
+            src="/video/footer-bg.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover object-right"
+          />
+
+          {/* Top → Bottom Overlay */}
+          <div className="absolute inset-0 bg-linear-to-b from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]/0" />
+        </div>
+
+
       <div className="flex flex-col lg:flex-row w-full justify-between items-center">
         {/* Left */}
         <div className="w-full p-4 md:p-8 flex flex-col gap-8 md:gap-18">
@@ -195,7 +214,24 @@ export default function Footer() {
             </h2>
           </div>
 
-          {/* Contact */}
+         
+          {/* Local Time + Quote */}
+          <div className="flex flex-col md:flex-row gap-5 ">
+            {/* Local Clock */}
+            <AnalogClockWidget showNumbers={false} size="lg" />
+
+            {/* Closing Quote */}
+            <div className="flex items-center">
+              <p data-about-heading className="text-md md:text-2xl text-white/75 md:max-w-[40ch]">
+                Open to Senior Product Designer and Design Lead roles,
+                design systems work, and AI-first teams, remote or
+                international.
+              </p>
+            </div>
+          </div>
+
+
+           {/* Contact */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center">
             {/* Email */}
             <div className="flex flex-col gap-2 md:gap-6 md:w-fit w-full">
@@ -242,20 +278,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Local Time + Quote */}
-          <div className="flex flex-col md:flex-row gap-5 ">
-            {/* Local Clock */}
-            <AnalogClockWidget showNumbers={false} size="lg" />
-
-            {/* Closing Quote */}
-            <div className="flex items-center">
-              <p className="text-md md:text-2xl text-white/75 md:max-w-[40ch]">
-                Open to Senior Product Designer and Design Lead roles,
-                design systems work, and AI-first teams, remote or
-                international.
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* Form */}
@@ -401,13 +423,18 @@ export default function Footer() {
           </div>
         </div>
       </div>
+        
+    {/* Giant VISION */}
+    <div className="md:block hidden">
+      <VisionReveal />
+    </div>
+      <div className="@container overflow-hidden block md:hidden">
 
-      {/* Giant VISION */}
-      <div className="@container overflow-hidden">
-        <h1 className="whitespace-nowrap text-[32cqw] md:text-[29cqw] text-white/10 font-bold leading-none text-center">
+        <h1 className="whitespace-nowrap text-[32cqw] md:text-[29cqw] md:text-white/0 text-[#FFFDD0] font-bold leading-none text-center">
           VISION
         </h1>
       </div>
+
     </section>
   );
 }
