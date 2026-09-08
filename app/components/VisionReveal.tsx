@@ -112,7 +112,7 @@ export default function VisionReveal() {
         animate={{
           opacity: isHovered ? 1 : 0,
           scale: isHovered ? 1.015 : 1,
-          filter : isHovered ? "blur(1px)" : "blur(10px)",
+          filter : isHovered ? "blur(0px)" : "blur(10px)",
         }}
         transition={{
           opacity: {

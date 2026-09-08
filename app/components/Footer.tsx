@@ -15,31 +15,31 @@ export default function Footer() {
   const socialLinks = [
     {
       title: "instagram",
-      link: "/",
+      link: "https://www.instagram.com/seiji_mv3/",
       id: "insta",
       IconId: "/social-icons/insta.svg",
     },
     {
       title: "github",
-      link: "/",
+      link: "https://github.com/WARD3NXD",
       id: "git",
       IconId: "/social-icons/github.svg",
     },
     {
       title: "X",
-      link: "/",
+      link: "https://x.com/ward3n_",
       id: "x",
       IconId: "/social-icons/x.svg",
     },
     {
       title: "youtube",
-      link: "/",
+      link: "https://www.youtube.com/@wardenGod",
       id: "youtube",
       IconId: "/social-icons/youtube.svg",
     },
     {
       title: "steam",
-      link: "/",
+      link: "https://steamcommunity.com/id/ward3n00/",
       id: "steam",
       IconId: "/social-icons/steam.svg",
     },
@@ -200,8 +200,8 @@ export default function Footer() {
                   w-full
                   object-cover
                   object-right
-                  mask-[linear-gradient(to_bottom,transparent_0%,black_45%,black_100%)]
-                  [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_45%,black_100%)]
+                  mask-[linear-gradient(to_bottom,transparent_10%,black_45%,black_100%)]
+                  [-webkit-mask-image:linear-gradient(to_bottom,transparent_10%,black_45%,black_100%)]
                 "
               />
         </div>
@@ -273,6 +273,8 @@ export default function Footer() {
                   <a
                     key={social.id}
                     href={social.link}
+                    rel="noopener noreferrer"
+                    target="_blank"
                     className="p-2 rounded-md bg-white/10 w-fit hover:bg-black hover:outline-2 hover:outline-white transition-all duration-300"
                   >
                     <img
