@@ -164,7 +164,6 @@ useGSAP(() => {
                 max-w-[2560px]
                 mx-auto
                 bg-[#0a0a0a]
-                min-h-svh
                 relative
             "
         >
@@ -212,7 +211,7 @@ useGSAP(() => {
                             </div>
                         </div>
 
-                        <div className="h-[2px] bg-white/10 w-full"></div>
+                        <div className="h-0.5 bg-white/10 w-full"></div>
 
                         <div className="h-full">
                             <p className="h-full">
@@ -220,7 +219,7 @@ useGSAP(() => {
                             </p>
                         </div>
 
-                        <div className="h-[2px] bg-white/10 w-full"></div>
+                        <div className="h-0.5 bg-white/10 w-full"></div>
                         <Button href={activeProject.href} text="Visit" />
 
                     </div>
@@ -327,7 +326,7 @@ useGSAP(() => {
                             key={project.id}
                             className="
                                 w-[88vw]
-                                max-w-[420px]
+                                max-w-105
                                 shrink-0
                                 snap-center
                                 bg-white/10
@@ -343,7 +342,7 @@ useGSAP(() => {
                                     alt={project.slug}
                                     className="
                                         w-full
-                                        aspect-[1.5/1]
+                                        aspect-1.5/1
                                         object-cover
                                         rounded-xl
                                     "
@@ -392,7 +391,7 @@ useGSAP(() => {
                                         {project.desc}
                                     </p>
 
-                                    <div className="h-[1px] bg-white/10 w-full"></div>
+                                    <div className="h-px bg-white/10 w-full"></div>
 
                                     <div className="text-sm text-white/60">
                                         {project.year}

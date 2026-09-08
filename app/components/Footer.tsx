@@ -1,56 +1,88 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Send } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import SplitText from "gsap/src/SplitText";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnalogClockWidget } from "@/components/clock-widget";
+
 
 export default function Footer() {
   const button = useRef<HTMLButtonElement>(null);
+
+  const socialLinks = [
+    {
+      title: "instagram",
+      link: "/",
+      id: "insta",
+      IconId: "/social-icons/insta.svg",
+    },
+    {
+      title: "github",
+      link: "/",
+      id: "git",
+      IconId: "/social-icons/github.svg",
+    },
+    {
+      title: "X",
+      link: "/",
+      id: "x",
+      IconId: "/social-icons/x.svg",
+    },
+    {
+      title: "youtube",
+      link: "/",
+      id: "youtube",
+      IconId: "/social-icons/youtube.svg",
+    },
+    {
+      title: "steam",
+      link: "/",
+      id: "steam",
+      IconId: "/social-icons/steam.svg",
+    },
+  ];
 
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
 
   useGSAP(() => {
-
     const headings = gsap.utils.toArray<HTMLElement>(
-        "[data-about-heading]"
-      );
+      "[data-about-heading]"
+    );
 
-      const splits: SplitText[] = [];
+    const splits: SplitText[] = [];
 
-      headings.forEach((heading) => {
-        const split = SplitText.create(heading, {
-          type: "words",
-          mask: "words",
-        });
-
-        splits.push(split);
-
-        gsap.set(split.words, {
-          yPercent: 100,
-          filter: "blur(20px)",
-          opacity: 0,
-        });
-
-        gsap.to(split.words, {
-          yPercent: 0,
-          filter: "blur(0px)",
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: heading,
-            start: "top 80%",
-            once: true,
-          },
-        });
+    headings.forEach((heading) => {
+      const split = SplitText.create(heading, {
+        type: "words",
+        mask: "words",
       });
 
+      splits.push(split);
+
+      gsap.set(split.words, {
+        yPercent: 100,
+        filter: "blur(20px)",
+        opacity: 0,
+      });
+
+      gsap.to(split.words, {
+        yPercent: 0,
+        filter: "blur(0px)",
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: heading,
+          start: "top 80%",
+          once: true,
+        },
+      });
+    });
 
     if (!button.current) return;
 
@@ -90,10 +122,14 @@ export default function Footer() {
     return () => {
       button.current?.removeEventListener("mouseenter", handleEnter);
       button.current?.removeEventListener("mouseleave", handleLeave);
+
+      splits.forEach((split) => split.revert());
     };
   }, [status]);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
 
     if (status === "sending") return;
@@ -122,7 +158,9 @@ export default function Footer() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Failed to send message.");
+        throw new Error(
+          result.error || "Failed to send message."
+        );
       }
 
       setStatus("success");
@@ -133,6 +171,7 @@ export default function Footer() {
       }, 4000);
     } catch (error) {
       console.error("Contact form error:", error);
+
       setStatus("error");
 
       setTimeout(() => {
@@ -142,28 +181,91 @@ export default function Footer() {
   };
 
   return (
-    <section className="relative h-[85svh] md:h-svh p-4 md:p-12">
+    <section className="relative p-4 md:p-12 mt-10">
+      <div className="flex flex-col lg:flex-row w-full justify-between items-center">
+        {/* Left */}
+        <div className="w-full p-4 md:p-8 flex flex-col gap-8 md:gap-18">
+          {/* Heading */}
+          <div className="flex flex-col gap-4">
+            <h2
+              data-about-heading
+              className="text-4xl font-semi text-white md:text-7xl"
+            >
+              Let's Work Together
+            </h2>
+          </div>
 
-      {/* Background */}
-      <div className="absolute bottom-0 left-0 w-full h-[inherit] -z-10">
-        <div className="absolute bottom-0 left-0 w-full h-[inherit] bg-linear-to-b from-[#0a0a0a] via-[#0a0a0a]/10 to-[#0a0a0a]/0" />
+          {/* Contact */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center">
+            {/* Email */}
+            <div className="flex flex-col gap-2 md:gap-6 md:w-fit w-full">
+              <div className="font-mono text-md uppercase tracking-widest text-white/50">
+                Email
+              </div>
 
-        <video
-          src="/video/footer-bg.mp4"
-          autoPlay
-          muted
-          loop
-          className="w-full h-full object-cover object-right"
-        />
-      </div>
+              <div className="pl-3 pr-1 py-1 rounded-xl border-2 border-white/30">
+                <a href="mailto:mehulmewada9@gmail.com">
+                  <h2
+                    data-about-heading
+                    className="text-xl/7 font-semi font-mono text-white md:text-3xl flex flex-row justify-between md:gap-3 items-center"
+                  >
+                    mehulmewada9@gmail.com
 
-      {/* Form */}
-      <div className="py-9">
+                    <span className="p-3 bg-white/10 rounded-sm w-fit">
+                      <Send color="#fff" />
+                    </span>
+                  </h2>
+                </a>
+              </div>
+            </div>
 
-          <div className="bg-white/10 p-3.5 md:p-8 rounded-md backdrop-blur-2xl md:max-w-2/7 flex flex-col gap-9">
+            {/* Socials */}
+            <div className="flex flex-col gap-2 md:gap-6 md:w-fit w-full">
+              <div className="font-mono text-md uppercase tracking-widest text-white/50">
+                Socials
+              </div>
 
-            <h2 data-about-heading className="w-full text-xl/7 font-semi text-white md:w-[60%] md:text-5xl/14">
-                Send Message
+              <div className="flex flex-row md:justify-normal justify-between md:gap-1 px-1 py-1 rounded-xl border-2 border-white/30">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.id}
+                    href={social.link}
+                    className="p-2 rounded-md bg-white/10 w-fit"
+                  >
+                    <img
+                      src={social.IconId}
+                      alt={social.title}
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Local Time + Quote */}
+          <div className="flex flex-col md:flex-row gap-5 ">
+            {/* Local Clock */}
+            <AnalogClockWidget showNumbers={false} size="lg" />
+
+            {/* Closing Quote */}
+            <div className="flex items-center">
+              <p className="text-md md:text-2xl text-white/75 md:max-w-[40ch]">
+                Open to Senior Product Designer and Design Lead roles,
+                design systems work, and AI-first teams, remote or
+                international.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Form */}
+        <div className="py-9 w-full lg:max-w-2/6">
+          <div className="bg-white/10 p-3.5 md:p-8 rounded-md backdrop-blur-2xl flex flex-col gap-9">
+            <h2
+              data-about-heading
+              className="text-xl/7 font-semi text-white md:text-5xl/14"
+            >
+              Send Message
             </h2>
 
             <form onSubmit={handleSubmit}>
@@ -173,10 +275,11 @@ export default function Footer() {
                   <div className="flex flex-col gap-1.5 w-full">
                     <label
                       htmlFor="fname"
-                      className="font-mono uppercase  text-[12px]"
+                      className="font-mono uppercase text-[12px]"
                     >
                       First Name
                     </label>
+
                     <input
                       id="fname"
                       type="text"
@@ -186,6 +289,7 @@ export default function Footer() {
                       required
                     />
                   </div>
+
                   <div className="flex flex-col gap-1.5 w-full">
                     <label
                       htmlFor="lname"
@@ -193,6 +297,7 @@ export default function Footer() {
                     >
                       Last Name
                     </label>
+
                     <input
                       id="lname"
                       type="text"
@@ -203,6 +308,7 @@ export default function Footer() {
                     />
                   </div>
                 </div>
+
                 {/* Email */}
                 <div className="flex flex-col gap-1.5">
                   <label
@@ -211,6 +317,7 @@ export default function Footer() {
                   >
                     Email Address
                   </label>
+
                   <input
                     id="email"
                     type="email"
@@ -220,6 +327,7 @@ export default function Footer() {
                     required
                   />
                 </div>
+
                 {/* Message */}
                 <div className="flex flex-col gap-1.5">
                   <label
@@ -228,6 +336,7 @@ export default function Footer() {
                   >
                     Write Message
                   </label>
+
                   <textarea
                     id="message"
                     name="message"
@@ -236,6 +345,7 @@ export default function Footer() {
                     required
                   />
                 </div>
+
                 {/* Submit */}
                 <div>
                   <button
@@ -269,15 +379,18 @@ export default function Footer() {
                         : status === "error"
                           ? "Try Again"
                           : "Send Message"}
+
                     <ArrowRight strokeWidth={1.5} />
                   </button>
                 </div>
-                {/* Status message */}
+
+                {/* Status */}
                 {status === "success" && (
                   <p className="font-mono text-sm text-white/60">
                     Thanks! Your message has been sent.
                   </p>
                 )}
+
                 {status === "error" && (
                   <p className="font-mono text-sm text-white/60">
                     Something went wrong. Please try again.
@@ -286,12 +399,14 @@ export default function Footer() {
               </div>
             </form>
           </div>
+        </div>
       </div>
 
+      {/* Giant VISION */}
       <div className="@container overflow-hidden">
-          <h1 className="whitespace-nowrap text-[32cqw] md:text-[29cqw] text-white/10 font-bold leading-none text-center">
-            VISION
-          </h1>
+        <h1 className="whitespace-nowrap text-[32cqw] md:text-[29cqw] text-white/10 font-bold leading-none text-center">
+          VISION
+        </h1>
       </div>
     </section>
   );
