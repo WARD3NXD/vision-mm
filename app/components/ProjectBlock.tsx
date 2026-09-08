@@ -363,7 +363,7 @@ export default function ProjectBlock() {
                             key={project.id}
                             className="
                                 w-[88vw]
-                                max-w-[420px]
+                                max-w-105
                                 shrink-0
                                 snap-center
                                 overflow-hidden
@@ -378,7 +378,7 @@ export default function ProjectBlock() {
                                     alt={project.slug}
                                     draggable={false}
                                     className="
-                                        aspect-[1.5/1]
+                                        aspect-1.5/1
                                         w-full
                                         rounded-xl
                                         object-cover

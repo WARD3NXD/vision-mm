@@ -124,6 +124,7 @@ const GlassWidgetBase = React.forwardRef<
         className={cn(
           "relative overflow-hidden rounded-2xl border border-white/10",
           "bg-white/6",
+          "backdrop-blur-sm",
           "shadow-[0_8px_32px_rgba(0,0,0,0.25)]",
           "transition-colors duration-300",
           sizeClasses[size],

@@ -108,7 +108,7 @@ function AnalogClockWidget({
   return (
     <GlassWidgetBase
       className={cn(
-        "p-3  md:min-w-102 w-auto h-full flex items-center",
+        "p-3 md:min-w-102 w-auto h-full flex items-center",
         className
       )}
       size="sm"
@@ -126,7 +126,7 @@ function AnalogClockWidget({
           )}
         >
           {/* Clock face */}
-          <div className="absolute inset-0 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm shadow-inner" />
+          <div className="absolute inset-0 rounded-full border border-white/20 bg-black/50 backdrop-blur-sm shadow-inner" />
 
           {/* Numbers */}
           {numbers.map((num, i) => {

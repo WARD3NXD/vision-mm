@@ -1,14 +1,12 @@
-"use client"
+"use client";
+
 import { useLayoutEffect, useRef } from "react";
 import type { ReactNode } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-gsap.registerPlugin(
-  ScrollTrigger,
-  ScrollSmoother,
-);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 type SmoothScrollProps = {
   children: ReactNode;
@@ -23,27 +21,59 @@ export function SmoothScroll({
   useLayoutEffect(() => {
     if (!wrapper.current || !content.current) return;
 
-    const smoother = ScrollSmoother.create({
-      wrapper: wrapper.current,
-      content: content.current,
-      smooth: 1.2,
-      effects: true,
-      normalizeScroll: {
-        allowNestedScroll: true,
-      },
+    const mm = gsap.matchMedia();
+
+    /*
+     * ---------------------------------------------------------
+     * DESKTOP ONLY
+     * ---------------------------------------------------------
+     *
+     * ScrollSmoother is completely disabled below 768px.
+     * Mobile uses the browser's native scrolling.
+     */
+
+    mm.add("(min-width: 768px)", () => {
+      if (!wrapper.current || !content.current) return;
+
+      const smoother = ScrollSmoother.create({
+        wrapper: wrapper.current,
+        content: content.current,
+        smooth: 1.2,
+        effects: true,
+
+        normalizeScroll: {
+          allowNestedScroll: true,
+        },
+      });
+
+      /*
+       * Refresh ScrollTrigger after the smoother
+       * and other components have initialized.
+       */
+
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+
+      /*
+       * Cleanup when viewport goes below 768px.
+       */
+
+      return () => {
+        smoother.kill();
+
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh();
+        });
+      };
     });
 
     /*
-     * Give existing components a chance to register
-     * their ScrollTriggers, then refresh measurements.
+     * Cleanup when component unmounts.
      */
 
-    requestAnimationFrame(() => {
-      ScrollTrigger.refresh();
-    });
-
     return () => {
-      smoother.kill();
+      mm.revert();
     };
   }, []);
 

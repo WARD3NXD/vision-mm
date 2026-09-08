@@ -187,17 +187,23 @@ export default function Footer() {
 
         <div className="absolute inset-0 -z-10 overflow-hidden">
           {/* Video */}
-          <video
-            src="/video/footer-bg.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-right"
-          />
-
-          {/* Top → Bottom Overlay */}
-          <div className="absolute inset-0 bg-linear-to-b from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]/0" />
+              <video
+                src="/video/footer-bg.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="
+                  absolute
+                  inset-0
+                  h-full
+                  w-full
+                  object-cover
+                  object-right
+                  mask-[linear-gradient(to_bottom,transparent_0%,black_45%,black_100%)]
+                  [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_45%,black_100%)]
+                "
+              />
         </div>
 
 
@@ -239,7 +245,8 @@ export default function Footer() {
                 Email
               </div>
 
-              <div className="pl-3 pr-1 py-1 rounded-xl border-2 border-white/30">
+              <div className="
+                pl-3 pr-1 py-1 rounded-xl border-2 border-white/30  bg-black/20 backdrop-blur-xl hover:border-white hover:bg-black transition-all duration-400 ease-out">
                 <a href="mailto:mehulmewada9@gmail.com">
                   <h2
                     data-about-heading
@@ -261,12 +268,12 @@ export default function Footer() {
                 Socials
               </div>
 
-              <div className="flex flex-row md:justify-normal justify-between md:gap-1 px-1 py-1 rounded-xl border-2 border-white/30">
+              <div className="flex flex-row md:justify-normal justify-between md:gap-1 px-1 py-1 rounded-xl border-2 border-white/30 bg-black/20 backdrop-blur-xl">
                 {socialLinks.map((social) => (
                   <a
                     key={social.id}
                     href={social.link}
-                    className="p-2 rounded-md bg-white/10 w-fit"
+                    className="p-2 rounded-md bg-white/10 w-fit hover:bg-black hover:outline-2 hover:outline-white transition-all duration-300"
                   >
                     <img
                       src={social.IconId}

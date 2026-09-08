@@ -48,8 +48,17 @@ export default function Hero (){
     return(
         <section ref={container} className="mx-auto w-full md:p-8 p-4 h-svh content-end items-end">
           <div className="absolute top-0 left-0 w-full h-[inherit] -z-10">
-            <div className="absolute top-0 left-0 w-full h-[inherit] bg-linear-to-b from-[#0a0a0a]/0 via-[#0a0a0a]/10 to-[#0a0a0a]" ></div>
-            <video src="/video/hero-bg-video.mp4" autoPlay muted loop className="w-full h-full object-cover" />
+            <video src="/video/hero-bg-video.mp4" autoPlay muted loop 
+              className="
+                absolute
+                inset-0
+                h-full
+                w-full
+                object-cover
+                md:object-right
+                mask-[linear-gradient(to_bottom,black_0%,black_50%,transparent_100%)]
+                [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_50%,transparent_100%)]
+              " />
           </div>
             <div className="flex flex-col md:flex-row md:justify-between md:items-end md:h-full pb-4 md:max-w-[2560px] mx-auto">
                 <h1 className="md:text-[120px] text-5xl uppercase hero-title font-bold md:text-6xl tracking-tight leading-none flex flex-col gap-2">
