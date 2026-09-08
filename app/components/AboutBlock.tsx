@@ -99,7 +99,7 @@ export default function AboutBlock() {
         mt-12 mb-12
         overflow-hidden
         bg-[#0a0a0a]
-        p-4
+        p-8
         md:mt-24 md:mb-24 md:p-12
 
         md:py-24

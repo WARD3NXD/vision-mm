@@ -28,7 +28,9 @@ export function SmoothScroll({
       content: content.current,
       smooth: 1.2,
       effects: true,
-      normalizeScroll: true,
+      normalizeScroll: {
+        allowNestedScroll: true,
+      },
     });
 
     /*
