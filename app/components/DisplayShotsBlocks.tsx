@@ -43,10 +43,10 @@ export default function DisplayShotsBlock() {
             <div className="relative w-full overflow-hidden">
 
                 {/* Left fade */}
-                <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-16 bg-gradient-to-r from-[#0a0a0a] to-transparent md:w-32" />
+                <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-16 bg-linear-to-r from-[#0a0a0a] to-transparent md:w-32" />
 
                 {/* Right fade */}
-                <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-16 bg-gradient-to-l from-[#0a0a0a] to-transparent md:w-32" />
+                <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-16 bg-linear-to-l from-[#0a0a0a] to-transparent md:w-32" />
 
                 {/* Moving track */}
                 <div
@@ -75,7 +75,7 @@ export default function DisplayShotsBlock() {
                                     md:w-[32vw]
                                 "
                             >
-                                <div className="aspect-[1600/946] overflow-hidden">
+                                <div className="aspect-1600/946 overflow-hidden">
                                     <img
                                         src={shot.image}
                                         alt=""
@@ -117,7 +117,7 @@ export default function DisplayShotsBlock() {
                                     md:w-[32vw]
                                 "
                             >
-                                <div className="aspect-[1600/946] overflow-hidden">
+                                <div className="aspect-1600/946 overflow-hidden">
                                     <img
                                         src={shot.image}
                                         alt=""

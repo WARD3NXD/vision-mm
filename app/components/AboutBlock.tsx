@@ -118,8 +118,8 @@ export default function AboutBlock() {
           className="
             w-full
             text-xl/7 font-semi text-white
-            md:w-[60%]
-            md:text-5xl/14
+            md:w-[65%]
+            md:text-4xl/14
           "
         >
           Hi, I'm a solo designer with over 7 years of experience crafting web
@@ -154,7 +154,7 @@ export default function AboutBlock() {
             w-full
             text-xl/7 font-semi text-white
             md:w-[45%]
-            md:text-5xl/14
+            md:text-4xl/14
           "
         >
           Design is where I live, breathe, and occasionally lose sleep over the

@@ -242,7 +242,7 @@ export default function ProjectBlock() {
                         md:max-h-dvh
                         md:max-w-[30%]
                         md:px-16
-                        md:py-48
+                        md:py-16
                     "
                 >
                     <div
@@ -262,7 +262,7 @@ export default function ProjectBlock() {
                         <div className="h-0.5 w-full bg-white/10" />
 
                         <div className="h-full">
-                            <p className="h-full text-2xl text-white/75">
+                            <p className="h-full text-base md:text-md text-white/75">
                                 {activeProject.desc}
                             </p>
                         </div>
@@ -304,7 +304,7 @@ export default function ProjectBlock() {
                             <div
                                 className="
                                     w-full
-                                    md:py-48
+                                    md:py-16
                                 "
                             >
                                 <div className="

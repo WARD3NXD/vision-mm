@@ -170,9 +170,9 @@ export default function TechBlock() {
                             data-about-heading
                             className="
                                 hero-title
-                                text-[clamp(3.2rem,8vw,8rem)]
+                                text-[clamp(3.2rem,6vw,6rem)]
                                 font-medium
-                                leading-[0.82]
+                                leading-[1.12]
                                 tracking-[-0.055em]
                                 text-white
                             "
@@ -192,11 +192,6 @@ export default function TechBlock() {
                             motion and modern web development.
                         </p>
 
-                        <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/25">
-                            <span>08</span>
-                            <span className="h-px w-8 bg-white/20" />
-                            <span>Technologies</span>
-                        </div>
                     </div>
                 </div>
 
