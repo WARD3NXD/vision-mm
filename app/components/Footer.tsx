@@ -182,7 +182,7 @@ export default function Footer() {
   };
 
   return (
-    <section className="relative p-4 md:p-12 mt-10">
+    <section id="contact" className="relative isolate p-4 md:p-12 mt-10">
 
 
         <div className="absolute inset-0 -z-10 overflow-hidden">

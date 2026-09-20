@@ -96,14 +96,14 @@ export default function StatsBlock() {
                                 key={item}
                                 className="
                                     relative
-                                    min-h-[220px]
+                                    min-h-55
                                     border-r
                                     border-b
                                     border-white/10
                                     p-5
-                                    sm:min-h-[260px]
+                                    sm:min-h-65
                                     sm:p-7
-                                    md:min-h-[380px]
+                                    md:min-h-95
                                     md:p-10
                                 "
                             >
@@ -118,9 +118,9 @@ export default function StatsBlock() {
                                 </div>
 
                                 <div className="absolute inset-x-5 bottom-12 sm:inset-x-7 md:inset-x-10 md:bottom-16">
-                                    <div className="h-16 w-28 animate-pulse bg-white/[0.04] md:h-24 md:w-40" />
+                                    <div className="h-16 w-28 animate-pulse bg-white/4 md:h-24 md:w-40" />
 
-                                    <div className="mt-5 h-3 w-20 animate-pulse bg-white/[0.04]" />
+                                    <div className="mt-5 h-3 w-20 animate-pulse bg-white/4" />
                                 </div>
                             </div>
                         ))}

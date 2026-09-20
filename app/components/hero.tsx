@@ -66,8 +66,7 @@ export default function Hero (){
                     <span className="md:text-5xl text-2xl hero-title font-normal">You'll forget it's just one person.</span>
                 </h1>
                 
-                {/*contact us link will be added later on*/}
-                <Button href="/" text="Let's see" />
+                <Button href="/#projects" text="Let's see" />
             </div>
         </section>
     );

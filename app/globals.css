@@ -105,6 +105,10 @@
   --sidebar-ring: #a3a3a3;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Dark theme for shadcn components */
 .dark {
   --background: #0a0a0a;

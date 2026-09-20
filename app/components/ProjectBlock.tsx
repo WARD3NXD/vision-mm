@@ -206,7 +206,7 @@ export default function ProjectBlock() {
     );
 
     return (
-        <section
+        <section id="projects"
             ref={container}
             className="
                 relative

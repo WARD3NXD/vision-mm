@@ -92,7 +92,7 @@ export default function AboutBlock() {
   );
 
   return (
-    <section
+    <section id="about"
       ref={container}
       className="
         relative mx-auto

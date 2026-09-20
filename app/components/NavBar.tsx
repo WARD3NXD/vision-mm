@@ -18,11 +18,6 @@ export default function NavBar() {
       id: "about",
     },
     {
-      link: "Contact",
-      href: "#contact",
-      id: "contact",
-    },
-    {
       link: "View CV",
       href: "/cv",
       id: "cv",
@@ -119,7 +114,7 @@ export default function NavBar() {
             ================================================= */}
 
         <div className="w-fit rounded-xl bg-[#0a0a0a]/40 px-3 py-4 font-mono text-2xl uppercase tracking-widest backdrop-blur-2xl">
-          Mehul Mewada
+          <a href="/">Mehul Mewada</a>
         </div>
 
         {/* =================================================
