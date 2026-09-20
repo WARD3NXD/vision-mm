@@ -13,6 +13,16 @@ export interface Project {
 export const projects: Project[] = [
     {
         id: "p1",
+        title: "iVenus",
+        slug: "ivenus",
+        desc: "For iVenus, I designed the store website with a focus on creating a polished and structured experience for an automotive retail platform. I worked on translating the brand and its range of products and services into a clear digital interface, paying attention to hierarchy, navigation and the overall shopping experience. After completing the design, I also began converting the interface into Next.js, bringing the designed experience into a functional web environment.",
+        category: "Ecommerce Store",
+        year: "2025",
+        image: "/thumbnail/ivenus_thumbnail.webp",
+        href: "https://ivenus.in/"
+    },
+    {
+        id: "p2",
         title: "Napsys",
         slug: "napsys-ai",
         desc: "For Napsys, I worked across both the product and its digital presence, creating the complete platform mockup and the website design from the ground up. I focused on building a clear and approachable interface for a product centered around AI-powered workflows, while keeping the visual system consistent across the platform and marketing website. I also took the website beyond the design stage and converted the final interface into a functional Webflow build.",
@@ -22,7 +32,7 @@ export const projects: Project[] = [
         href: "https://napsys.ai"
     },
     {
-        id: "p2",
+        id: "p3",
         title: "Samurai Warlords",
         slug: "samurai-warlords",
         desc: "Samurai Warlords involved designing a wide range of digital experiences across its gaming and web3 ecosystem. I designed the main website along with the staking platform, while also working on the interfaces for its Chess and Solitaire games. Beyond the product experiences, I created supporting marketing materials to maintain a consistent visual language across different touchpoints. The project allowed me to work across product UI, gaming interfaces and promotional design within one visual system.",
@@ -31,16 +41,7 @@ export const projects: Project[] = [
         image: "/thumbnail/samurai-w-thumbnail.webp",
         href: "https://samuraiwarlords.com/"
     },
-    {
-        id: "p3",
-        title: "iVenus",
-        slug: "ivenus",
-        desc: "For iVenus, I designed the store website with a focus on creating a polished and structured experience for an automotive retail platform. I worked on translating the brand and its range of products and services into a clear digital interface, paying attention to hierarchy, navigation and the overall shopping experience. After completing the design, I also began converting the interface into Next.js, bringing the designed experience into a functional web environment.",
-        category: "Ecommerce Store",
-        year: "2025",
-        image: "/thumbnail/ivenus_thumbnail.webp",
-        href: "https://ivenus.in/"
-    },
+
     {
         id: "p4",
         title: "MAHY Khoory Automotive",
