@@ -43,6 +43,18 @@ export default function Footer() {
       id: "steam",
       IconId: "/social-icons/steam.svg",
     },
+    {
+      title: "Dribbble",
+      link: "https://dribbble.com/warden_08",
+      id: "dribbble",
+      IconId: "/social-icons/dribbble.svg"
+    },
+    {
+      title: "Behance",
+      link: "https://www.behance.net/mehulmewada1",
+      id: "Behance",
+      IconId: "/social-icons/behance.svg"
+    },
   ];
 
   const [status, setStatus] = useState<

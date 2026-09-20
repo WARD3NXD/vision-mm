@@ -7,6 +7,7 @@ import StatsBlock from "../components/StatsBlock";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import TechBlock from "../components/TechBlock";
+import DisplayShotsBlock from "../components/DisplayShotsBlocks";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <AboutBlock />
         <ProjectBlock />
         <TechBlock />
+        <DisplayShotsBlock />
         <StatsBlock />
         <Footer />
       </SmoothScroll>

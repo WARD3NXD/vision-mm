@@ -334,10 +334,6 @@ export default function TechBlock() {
                                         {technology.category}
                                     </p>
                                 </div>
-
-                                <span className="text-lg text-white/30">
-                                    ↗
-                                </span>
                             </div>
 
                             {/* Hover Line */}

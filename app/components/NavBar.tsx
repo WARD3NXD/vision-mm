@@ -14,7 +14,7 @@ export default function NavBar() {
   const navlinks = [
     {
       link: "About",
-      href: "#about",
+      href: "/#about",
       id: "about",
     },
     {
