@@ -186,7 +186,7 @@ export default function Preloader() {
         pointer-events-none
         fixed
         inset-0
-        z-[9999]
+        z-9999
         overflow-hidden
         bg-[#0a0a0a]
         text-white

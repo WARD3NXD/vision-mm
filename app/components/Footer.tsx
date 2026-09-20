@@ -249,7 +249,6 @@ export default function Footer() {
                 pl-3 pr-1 py-1 rounded-xl border-2 border-white/30  bg-black/20 backdrop-blur-xl hover:border-white hover:bg-black transition-all duration-400 ease-out">
                 <a href="mailto:mehulmewada9@gmail.com">
                   <h2
-                    data-about-heading
                     className="text-xl/7 font-semi font-mono text-white md:text-3xl flex flex-row justify-between md:gap-3 items-center"
                   >
                     mehulmewada9@gmail.com

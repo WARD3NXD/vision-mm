@@ -262,7 +262,7 @@ export default function ProjectBlock() {
                         <div className="h-0.5 w-full bg-white/10" />
 
                         <div className="h-full">
-                            <p className="h-full">
+                            <p className="h-full text-2xl text-white/75">
                                 {activeProject.desc}
                             </p>
                         </div>
@@ -298,27 +298,30 @@ export default function ProjectBlock() {
                                 flex
                                 w-full
                                 items-center
-                                md:min-h-[80svh]
+                                md:min-h-[75svh]
                             "
                         >
                             <div
                                 className="
                                     w-full
-                                    rounded-2xl
-                                    bg-white/10
-                                    p-2
+                                    md:py-48
                                 "
                             >
-                                <img
-                                    src={project.image}
-                                    alt={project.slug}
-                                    className="
-                                        aspect-[1.65/1]
-                                        w-full
-                                        rounded-xl
-                                        object-cover
-                                    "
-                                />
+                                <div className="
+                                    rounded-2xl
+                                    bg-white/10
+                                    p-2">
+                                    <img
+                                        src={project.image}
+                                        alt={project.slug}
+                                        className="
+                                            aspect-[1.65/1]
+                                            w-full
+                                            rounded-xl
+                                            object-cover
+                                        "
+                                    />
+                                </div>
                             </div>
                         </div>
                     ))}
