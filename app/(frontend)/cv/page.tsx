@@ -4,7 +4,7 @@ import config from "@payload-config";
 import { SmoothScroll } from "@/app/components/ScrollSmoother";
 import NavBar from "@/app/components/NavBar";
 import Footer from "@/app/components/Footer";
-
+export const dynamic = "force-dynamic";
 export default async function Cv() {
     const payload = await getPayload({
         config,
