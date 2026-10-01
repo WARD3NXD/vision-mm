@@ -269,10 +269,7 @@ export default function ProjectBlock() {
 
                         <div className="h-0.5 w-full bg-white/10" />
 
-                        <Button
-                            href={activeProject.href}
-                            text="Visit"
-                        />
+                        <Button href={activeProject.href} text="View" secondaryHref={activeProject.caseStudy} secondaryText="View Case Study"  />
                     </div>
                 </div>
 

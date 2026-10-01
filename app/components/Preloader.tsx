@@ -23,7 +23,7 @@ export default function Preloader() {
 
   /*
    * ---------------------------------------------------------
-   * TRACK PAGE LOADING
+   * TRACK INITIAL PAGE LOAD
    * ---------------------------------------------------------
    */
 
@@ -79,7 +79,7 @@ export default function Preloader() {
 
   /*
    * ---------------------------------------------------------
-   * GREETING
+   * GREETING LOOP
    * ---------------------------------------------------------
    */
 
@@ -110,7 +110,7 @@ export default function Preloader() {
 
   /*
    * ---------------------------------------------------------
-   * EXIT
+   * EXIT ANIMATION
    * ---------------------------------------------------------
    */
 
@@ -122,7 +122,9 @@ export default function Preloader() {
 
       const timeline = gsap.timeline({
         onComplete: () => {
-          loader.style.display = "none";
+          gsap.set(loader, {
+            display: "none",
+          });
         },
       });
 
@@ -151,6 +153,7 @@ export default function Preloader() {
     {
       scope: loaderRef,
       dependencies: [ready],
+      revertOnUpdate: false,
     }
   );
 

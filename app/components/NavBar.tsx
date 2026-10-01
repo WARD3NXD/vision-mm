@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function NavBar() {
   const navRef = useRef<HTMLElement>(null);
@@ -24,6 +25,12 @@ export default function NavBar() {
     },
   ];
 
+  /*
+   * ---------------------------------------------------------
+   * NAVBAR SCROLL ANIMATION
+   * ---------------------------------------------------------
+   */
+
   useGSAP(() => {
     const nav = navRef.current;
 
@@ -34,6 +41,7 @@ export default function NavBar() {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
 
+      // Always show navbar near the top
       if (currentScroll <= 20) {
         gsap.to(nav, {
           y: 0,
@@ -46,6 +54,7 @@ export default function NavBar() {
         return;
       }
 
+      // Scrolling down → hide
       if (currentScroll > lastScroll) {
         gsap.to(nav, {
           y: -120,
@@ -55,6 +64,7 @@ export default function NavBar() {
         });
       }
 
+      // Scrolling up → show
       if (currentScroll < lastScroll) {
         gsap.to(nav, {
           y: 0,
@@ -76,7 +86,12 @@ export default function NavBar() {
     };
   }, []);
 
-  // Mobile menu animation
+  /*
+   * ---------------------------------------------------------
+   * MOBILE MENU ANIMATION
+   * ---------------------------------------------------------
+   */
+
   useGSAP(() => {
     const menu = mobileMenuRef.current;
 
@@ -109,12 +124,15 @@ export default function NavBar() {
       className="fixed top-0 left-0 z-50 w-full p-3"
     >
       <div className="flex w-full items-center justify-between">
+
         {/* =================================================
             LOGO
             ================================================= */}
 
         <div className="w-fit rounded-xl bg-[#0a0a0a]/40 px-3 py-4 font-mono text-2xl uppercase tracking-widest backdrop-blur-2xl">
-          <a href="/">Mehul Mewada</a>
+          <Link href="/">
+            Mehul Mewada
+          </Link>
         </div>
 
         {/* =================================================
@@ -123,12 +141,25 @@ export default function NavBar() {
 
         <div className="hidden md:flex h-fit w-fit items-center gap-2 rounded-xl bg-[#0a0a0a]/40 px-3 py-2 font-mono uppercase backdrop-blur-2xl">
           {navlinks.map((item) => (
-            <a
+            <Link
               key={item.id}
               href={item.href}
-              className="group relative overflow-hidden rounded-sm bg-white/10 px-4 py-2 transition-all duration-300 hover:outline-2 hover:outline-white"
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-sm
+                bg-white/10
+                px-4
+                py-2
+                transition-all
+                duration-300
+                hover:outline-2
+                hover:outline-white
+              "
             >
               {/* Shimmer */}
+
               <span
                 className="
                   pointer-events-none
@@ -150,10 +181,11 @@ export default function NavBar() {
               <span className="relative z-10">
                 {item.link}
               </span>
-            </a>
+            </Link>
           ))}
 
           {/* Let's Talk */}
+
           <a
             href="#contact"
             className="
@@ -174,6 +206,7 @@ export default function NavBar() {
             "
           >
             {/* Shimmer */}
+
             <span
               className="
                 pointer-events-none
@@ -249,8 +282,9 @@ export default function NavBar() {
         "
       >
         <div className="flex flex-col gap-2 p-3 font-mono uppercase">
+
           {navlinks.map((item) => (
-            <a
+            <Link
               key={item.id}
               href={item.href}
               onClick={closeMenu}
@@ -267,7 +301,7 @@ export default function NavBar() {
               "
             >
               {item.link}
-            </a>
+            </Link>
           ))}
 
           <a
@@ -286,6 +320,7 @@ export default function NavBar() {
           >
             Let's Talk
           </a>
+
         </div>
       </div>
     </nav>

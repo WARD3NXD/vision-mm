@@ -8,6 +8,7 @@ export interface Project {
     year: string;
     image: string;
     href: string;
+    caseStudy: string;
 }
 
 export const projects: Project[] = [
@@ -19,7 +20,8 @@ export const projects: Project[] = [
         category: "Ecommerce Store",
         year: "2025",
         image: "/thumbnail/ivenus_thumbnail.webp",
-        href: "https://ivenus.in/"
+        href: "https://ivenus.in/",
+        caseStudy: "/work/ivenus",
     },
     {
         id: "p2",
@@ -29,7 +31,8 @@ export const projects: Project[] = [
         category: "SaaS",
         year: "2023",
         image: "/thumbnail/napsys_thumbnail.webp",
-        href: "https://napsys.ai"
+        href: "https://napsys.ai",
+        caseStudy: "/work/napsys/",
     },
     {
         id: "p3",
@@ -39,7 +42,8 @@ export const projects: Project[] = [
         category: "Gaming + Blockchain",
         year: "2021",
         image: "/thumbnail/samurai-w-thumbnail.webp",
-        href: "https://samuraiwarlords.com/"
+        href: "https://samuraiwarlords.com/",
+        caseStudy: "/work/samurai-warlords",
     },
 
     {
@@ -50,6 +54,7 @@ export const projects: Project[] = [
         category: "Automotive Corporate",
         year: "2026",
         image: "/thumbnail/mahy-khoory-a-thumbnail.webp",
-        href: "https://mk-auto-two.vercel.app/"
+        href: "https://mk-auto-two.vercel.app/",
+        caseStudy: "/work/mahy-khooray",
     },
 ];
