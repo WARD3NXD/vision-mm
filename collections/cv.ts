@@ -8,7 +8,6 @@ export const CV: CollectionConfig = {
     },
 
     upload: {
-        staticDir: "cv",
         mimeTypes: ["application/pdf"],
     },
 

@@ -22,6 +22,8 @@ export default async function Cv() {
     });
 
     const cv = docs[0];
+    console.log("CV:", cv);
+    console.log("CV URL:", cv?.url);
 
     return (
         <main className="min-h-screen bg-[#0a0a0a] text-white">
