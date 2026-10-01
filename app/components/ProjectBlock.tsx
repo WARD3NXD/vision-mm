@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { SplitText } from "gsap/src/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "@/data/projects";
-import { Link } from "lucide-react";
+import { Link, ChevronRight } from "lucide-react";
 import Button from "./Button";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -418,17 +418,17 @@ export default function ProjectBlock() {
                                         {project.slug}
                                     </a>
 
-                                    <p className="text-sm leading-6 text-white/70">
+                                    <p className="text-sm leading-6 max-h-[12ch] truncate overflow-clip text-white/70">
                                         {project.desc}
                                     </p>
 
                                     <div className="h-px w-full bg-white/10" />
-
-                                    <div className="text-sm text-white/60">
-                                        {project.year}
+                                    <div className="flex flex-col">
+                                        <a className="px-4 py-2 w-full bg-accent flex flex-row justify-between text-black rounded-sm " href={project.caseStudy}> View Case Study <ChevronRight strokeWidth={1} />  </a>
                                     </div>
                                 </div>
                             </div>
+                            
                         </article>
                     ))}
                 </div>
